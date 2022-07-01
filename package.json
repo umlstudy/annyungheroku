@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build-client": "cd client && npm ci && npm run build && cd ../",
-    "cp-cli-to-svr": "cd server && rm -rf dist/build && mv ../client/build dist && cd ../",
+    "cp-cli-to-svr": "cd server && rm -rf dist && mkdir dist && mv ../client/build dist && cd ../",
     "build-server": "cd server && npm ci --dev && npm run build && cd ../",
     "heroku-prebuild": "npm run build-client && npm run cp-cli-to-svr && npm run build-server",
     "start" : "cd server && npm run start",

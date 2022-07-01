@@ -3,7 +3,7 @@ const app = express()
 
 app.use(express.static('build'));
 
-app.get('/', function (req, res) {
+app.get('/', (req, res) => {
     //res.send('Hello World2222ddd')
     res.sendFile(__dirname+'/build/index.html');
 })
@@ -11,6 +11,6 @@ app.get('/', function (req, res) {
 const PORT = process.env.PORT || 3000;
 
 console.log("server start");
-app.listen(PORT, ()=>{
-    console.log("server is running on 3000");
+app.listen(PORT, ()=> {
+    console.log("server is running on " + PORT);
 });
